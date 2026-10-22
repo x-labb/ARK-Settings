@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARK Settings</title>
+  <meta name="description" content="Pick your ARK: Survival Ascended server settings and get GameUserSettings.ini, Game.ini and the launch command, ready to use.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    try { const t = localStorage.getItem('ark-settings:theme'); if (t) document.documentElement.dataset.theme = t; } catch {}
+  </script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn nav-toggle" id="btn-nav" type="button" aria-label="Open menu"></button>
+    <a class="brand" href="#/server">
+      <img class="brand-mark" src="favicon.svg" alt="" width="26" height="26">
+      <span class="brand-name">ARK Settings</span>
+      <span class="brand-sub">for Ascended servers</span>
+    </a>
+    <label class="search">
+      <span class="search-icon" id="search-icon"></span>
+      <input id="search" type="search" placeholder="Search settings" autocomplete="off" spellcheck="false" aria-label="Search settings">
+      <kbd class="search-kbd">/</kbd>
+    </label>
+    <div class="top-actions">
+      <button class="btn" id="btn-import" type="button"></button>
+      <button class="btn btn-primary files-toggle" id="btn-files" type="button"></button>
+      <details class="menu" id="menu">
+        <summary class="icon-btn" aria-label="More actions"></summary>
+        <div class="menu-list" role="menu">
+          <button type="button" role="menuitem" data-action="save-preset">Save preset (.json)</button>
+          <button type="button" role="menuitem" data-action="load-preset">Load preset…</button>
+          <hr>
+          <button type="button" role="menuitem" data-action="reset-all" class="danger">Reset everything</button>
+        </div>
+      </details>
+      <button class="icon-btn" id="btn-theme" type="button" aria-label="Toggle dark mode"></button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="sidebar" id="sidebar" aria-label="Setting categories"></nav>
+    <main class="main" id="main"></main>
+    <aside class="output" id="output" aria-label="Generated files"></aside>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <dialog class="dialog" id="import-dialog"></dialog>
+  <input type="file" id="preset-file" accept=".json,application/json" hidden>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <noscript><p class="noscript">This app needs JavaScript.</p></noscript>
+</body>
+</html>
