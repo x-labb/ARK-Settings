@@ -57,3 +57,7 @@ js/ui/                views, controls, output panel, import dialog
 Setting keys, defaults and file placement come from the [ARK wiki's server configuration page](https://ark.wiki.gg/wiki/Server_configuration).
 Some settings are inherited from ARK: Survival Evolved and are marked "unknown" for ASA on the wiki. They are included because they very likely still work, but they haven't been verified on ASA.
 If a setting is wrong or missing, fix its entry in `js/data/settings.js`. Each entry is a plain object.
+
+## License
+
+[MIT](LICENSE)
